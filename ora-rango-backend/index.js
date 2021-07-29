@@ -14,6 +14,7 @@ const options = {
     //mtls
     ca: fs.readFileSync('./ca-gerencianet.crt'),
     miniVersion: 'TLSv1.2',
+    requesCert: true,
     rejectUnauthorized: false
 
 }
