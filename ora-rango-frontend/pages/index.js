@@ -6,6 +6,7 @@ import Head from 'next/head';
 
 const Index = ({ products }) => {
     const cart = useCart();
+
     return (
         <>
             <Head>
