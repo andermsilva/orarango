@@ -1,0 +1,12 @@
+poc/
+teste/
+.env.homologacao
+.env.producao
+credenciais.json
+ora-rango-backend/node_modules
+ora-rango-frontend/node_modules
+ora-rango-frontend/.next
+
+
+
+
