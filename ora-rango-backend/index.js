@@ -12,7 +12,7 @@ const options = {
     cert: fs.readFileSync('/etc/letsencrypt/live/api-orarango.amsdev.com.br/fullchain.pem'),
 
     //mtls
-    ca: fs.readFileSync('.ca-gerencinet.crt'),
+    ca: fs.readFileSync('./ca-gerencianet.crt'),
     miniVersion: 'TLSv1.2',
     rejectUnauthorized: false
 
