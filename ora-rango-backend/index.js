@@ -8,7 +8,7 @@ const app = require('./app');
 const options = {
 
     //tls
-    key: fs.readFileSync('/etc/letsencrypt/live/api-orarango.amsdev.com.br/privkey.pem '),
+    key: fs.readFileSync('/etc/letsencrypt/live/api-orarango.amsdev.com.br/privkey.pem'),
     cert: fs.readFileSync('/etc/letsencrypt/live/api-orarango.amsdev.com.br/fullchain.pem'),
 
     //mtls
