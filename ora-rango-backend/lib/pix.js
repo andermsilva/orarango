@@ -17,7 +17,7 @@ const baseurl = process.env.GN_ENV === "producao" ? apiProducao : apiStaging;
 const getToken = async () => {
     console.log(process.env.GN_ENV);
 
-    const certificado = fs.readFileSync(`../../${process.env.GN_CERTIFICADO}`);
+    const certificado = fs.readFileSync(`../${process.env.GN_CERTIFICADO}`);
 
     const credenciais = {
         client_id: process.env.GN_CLIENT_ID,
