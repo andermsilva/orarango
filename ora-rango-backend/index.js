@@ -1,4 +1,4 @@
-require('dotenv').config({ path: '../.env.homologacao' });
+require('dotenv').config({ path: '../.env.producao' });
 
 const https = require('https');
 const fs = require('fs');
