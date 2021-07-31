@@ -6,7 +6,7 @@ const https = require('https');
 const axios = require('axios');
 const fs = require('fs');
 const { config } = require('process');
-require('../../')
+
 
 
 const apiProducao = 'https://api-pix.gerencianet.com.br';
