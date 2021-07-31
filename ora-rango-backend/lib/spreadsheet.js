@@ -4,6 +4,8 @@ const { v4 } = require('uuid');
 
 const { GoogleSpreadsheet } = require('google-spreadsheet');
 
+const credencials = require('../../credenciais.json')
+
 const doc = new GoogleSpreadsheet(process.env.DOC_ID_SHEET);
 
 const fromBase64 = value => {
@@ -16,8 +18,8 @@ const saveOrder = async (order) => {
 
     await doc.useServiceAccountAuth({
         client_email: process.env.EMAIL_GOGLE_API,
-        // private_key: crendenciais.private_key
-        private_key: fromBase64(process.env.PRIVATE_KEY_GOOGLE)
+        private_key: credencials.private_key
+        //private_key: fromBase64(process.env.PRIVATE_KEY_GOOGLE)
     });
 
 
