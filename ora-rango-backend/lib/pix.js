@@ -1,5 +1,5 @@
 "use strict";
-require('dotenv').config({ path: '../../.env.homologacao' });
+require('dotenv').config({ path: '../../.env.producao' });
 
 //const crendenciais = require('../../')
 const https = require('https');
