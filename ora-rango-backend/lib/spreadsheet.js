@@ -4,7 +4,7 @@ const { v4 } = require('uuid');
 
 const { GoogleSpreadsheet } = require('google-spreadsheet');
 
-const credencials = require('../../credenciais.json')
+const credencials = require('../../credencials.json')
 
 const doc = new GoogleSpreadsheet(process.env.DOC_ID_SHEET);
 
