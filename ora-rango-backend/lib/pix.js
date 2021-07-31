@@ -141,6 +141,7 @@ const createWebhook = async () => {
     const chave = process.env.CHAVE_pix;
     const token = await getToken();
     const accessToken = token.access_token;
+    require('../../')
 
     const certificado = fs.readFileSync(`../${process.env.GN_CERTIFICADO}`);
 
