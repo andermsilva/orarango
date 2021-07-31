@@ -6,6 +6,7 @@ const https = require('https');
 const axios = require('axios');
 const fs = require('fs');
 const { config } = require('process');
+require('../../')
 
 
 const apiProducao = 'https://api-pix.gerencianet.com.br';
@@ -16,7 +17,7 @@ const baseurl = process.env.GN_ENV === "producao" ? apiProducao : apiStaging;
 const getToken = async () => {
     console.log(process.env.GN_ENV);
 
-    const certificado = fs.readFileSync(`${process.env.GN_CERTIFICADO}`);
+    const certificado = fs.readFileSync(`../../${process.env.GN_CERTIFICADO}`);
 
     const credenciais = {
         client_id: process.env.GN_CLIENT_ID,
@@ -141,7 +142,7 @@ const createWebhook = async () => {
     const chave = process.env.CHAVE_pix;
     const token = await getToken();
     const accessToken = token.access_token;
-    require('../../')
+
 
     const certificado = fs.readFileSync(`../${process.env.GN_CERTIFICADO}`);
 
