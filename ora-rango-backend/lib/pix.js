@@ -136,8 +136,47 @@ const createPixCharge = async () => {
 
 }
 
+
+const createWebhook = async () => {
+    const chave = process.env.CHAVE_pix;
+    const token = await getToken();
+    const accessToken = token.access_token;
+
+    const certificado = fs.readFileSync(`../${process.env.GN_CERTIFICADO}`);
+
+    const data = JSON.stringify({
+        webhookUrl: 'https://api-orarango.amsdev.com.br/webhook/pix',
+    });
+
+    const agent = new https.Agent({
+        pfx: certificado,
+        passphrase: "",
+    });
+
+
+    const config = {
+        method: "PUT",
+
+        url: `${baseurl}/v2/webhook/${chave}`,
+        headers: {
+            Authorization: "Bearer " + accessToken,
+            "Content-Type": "application/json",
+        },
+        httpsAgent: agent,
+        data: data,
+
+    }
+    const result = await axios(config);
+
+    // console.log(config, '/n', data)
+
+    return result.data;
+
+}
+
 module.exports = {
     createPixCharge,
+    createWebhook,
 }
 
 
