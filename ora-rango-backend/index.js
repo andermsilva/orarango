@@ -3,7 +3,7 @@ require('dotenv').config({ path: '../.env.producao' });
 const https = require('https');
 const fs = require('fs');
 const app = require('./app');
-const { createWebhook } = require('./lib')
+const { createWebhook } = require('./lib/pix')
 //const app1 = require('../credenciais.json');
 
 const options = {
