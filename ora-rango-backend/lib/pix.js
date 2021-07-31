@@ -15,9 +15,9 @@ const apiStaging = 'https://api-pix-h.gerencianet.com.br';
 const baseurl = process.env.GN_ENV === "producao" ? apiProducao : apiStaging;
 
 const getToken = async () => {
-    console.log(process.env.GN_ENV);
+    console.log('escopo ', process.env.GN_ENV);
 
-    const certificado = fs.readFileSync(`../${process.env.GN_CERTIFICADO}`);
+    const certificado = fs.readFileSync(`../../${process.env.GN_CERTIFICADO}`);
 
     const credenciais = {
         client_id: process.env.GN_CLIENT_ID,
@@ -52,7 +52,7 @@ const getToken = async () => {
 }
 
 const createCharge = async (accessToken, chargeData) => {
-    const certificado = fs.readFileSync(`../${process.env.GN_CERTIFICADO}`);
+    const certificado = fs.readFileSync(`../../${process.env.GN_CERTIFICADO}`);
 
     const data = JSON.stringify(chargeData);
 
@@ -83,7 +83,7 @@ const createCharge = async (accessToken, chargeData) => {
 
 
 const getLoc = async (accessToken, locId) => {
-    const certificado = fs.readFileSync(`../${process.env.GN_CERTIFICADO}`);
+    const certificado = fs.readFileSync(`../../${process.env.GN_CERTIFICADO}`);
 
     const agent = new https.Agent({
         pfx: certificado,
@@ -144,7 +144,7 @@ const createWebhook = async () => {
     const accessToken = token.access_token;
 
 
-    const certificado = fs.readFileSync(`../${process.env.GN_CERTIFICADO}`);
+    const certificado = fs.readFileSync(`../../${process.env.GN_CERTIFICADO}`);
 
     const data = JSON.stringify({
         webhookUrl: 'https://api-orarango.amsdev.com.br/webhook/pix',
