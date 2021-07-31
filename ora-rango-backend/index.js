@@ -11,6 +11,9 @@ const options = {
     key: fs.readFileSync('/etc/letsencrypt/live/api-orarango.amsdev.com.br/privkey.pem'),
     cert: fs.readFileSync('/etc/letsencrypt/live/api-orarango.amsdev.com.br/fullchain.pem'),
 
+
+
+
     //mtls
     ca: fs.readFileSync('./ca-gerencianet.crt'),
     miniVersion: 'TLSv1.2',
@@ -20,5 +23,5 @@ const options = {
 }
 
 const server = https.createServer(options, app);
-server.listenerCount(443)
+server.listen(443)
 

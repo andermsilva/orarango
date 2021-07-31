@@ -8,9 +8,14 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-app.get('/', (req, res) => {
-    res.send({ ok: true });
-})
+try {
+
+    app.get('/', (req, res) => {
+        res.send({ ok: true });
+    })
+} catch (err) {
+    console.log(err)
+}
 
 app.post('/create-order', async (req, res) => {
 
