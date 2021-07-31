@@ -29,7 +29,7 @@ app.post('/create-order', async (req, res) => {
 })
 
 app.post('/webhook/pix', (req, res) => {
-    console.log(req.client)
+    console.log('webhook recived')
     console.log(req.body)
     if (req.client.authorized) {
         return res.status(401).send('Invalid client certificate.');
