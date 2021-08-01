@@ -1,4 +1,4 @@
-require('dotenv').config({ path: '../.env.producao' });
+require('dotenv').config({ path: '../.env.homologacao' });
 
 const https = require('https');
 const fs = require('fs');
@@ -28,7 +28,7 @@ const server = https.createServer(options, app);
 
 server.listen(443, () => {
     console.log('server running...')
-    console.log('creating webhook fot pix')
+    console.log('creating webhook to pix')
     createWebhook().then(() => {
         console.log('wewbhook created')
     })
