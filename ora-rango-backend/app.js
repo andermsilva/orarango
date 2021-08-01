@@ -25,7 +25,7 @@ app.post('/create-order', async (req, res) => {
     res.send({ ok: 1, qrcode, cobranca });
 })
 
-/* app.post('/webhook/pix', (req, res) => {
+app.post('/webhook/pix', (req, res) => {
     console.log('webhook recived')
     console.log(req.body)
     if (!req.client.authorized) {
@@ -33,6 +33,6 @@ app.post('/create-order', async (req, res) => {
     }
     res.send({ ok: 1 })
 
-}) */
+})
 
 module.exports = app;
