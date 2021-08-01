@@ -52,7 +52,7 @@ const getToken = async () => {
 }
 
 const createCharge = async (accessToken, chargeData) => {
-    const certificado = fs.readFileSync(`../${process.env.GN_CERTIFICADO}`);
+    const certificado = fs.readFileSync('../' + process.env.GN_CERTIFICADO);
 
     const data = JSON.stringify(chargeData);
 
@@ -83,7 +83,7 @@ const createCharge = async (accessToken, chargeData) => {
 
 
 const getLoc = async (accessToken, locId) => {
-    const certificado = fs.readFileSync(`../${process.env.GN_CERTIFICADO}`);
+    const certificado = fs.readFileSync('../' + process.env.GN_CERTIFICADO);
 
     const agent = new https.Agent({
         pfx: certificado,
@@ -144,7 +144,7 @@ const createWebhook = async () => {
     const accessToken = token.access_token;
 
 
-    const certificado = fs.readFileSync(`../${process.env.GN_CERTIFICADO}`);
+    const certificado = fs.readFileSync('../' + process.env.GN_CERTIFICADO);
 
     const data = JSON.stringify({
         webhookUrl: 'https://api-orarango.amsdev.com.br/webhook/pix',
