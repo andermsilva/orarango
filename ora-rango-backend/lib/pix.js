@@ -159,7 +159,7 @@ const createWebhook = async () => {
     const config = {
         method: "PUT",
 
-        url: `${baseurl}/v2/webhook/${chave}`,
+        url: baseurl + '/v2/webhook/' + chave,
         headers: {
             Authorization: "Bearer " + accessToken,
             "Content-Type": "application/json",
